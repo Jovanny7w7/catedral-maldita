@@ -1,0 +1,7 @@
+{
+  "name": "catedral-m",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
