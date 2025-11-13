@@ -1,0 +1,65 @@
+ion-menu.custom-menu {
+  --background: linear-gradient(180deg, #1a001f 0%, #000000 100%);
+  --color: #fff;
+}
+.custom-menu {
+  --background: linear-gradient(180deg, #1a001f 0%, #000000 100%);
+  color: #fff;
+  font-family: 'Cinzel', serif;
+}
+
+.custom-menu ion-toolbar {
+  --background: #2c003e;
+  --color: #ffffff;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.custom-menu ion-title {
+  letter-spacing: 1px;
+}
+
+.custom-menu ion-content {
+  --background: transparent;
+  padding-top: 10px;
+}
+
+/* 🟪 Estilo para la lista de opciones */
+.custom-menu ion-item {
+  --background: transparent;
+  --color: #d3a3ff;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin: 6px 12px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+/* Efecto hover / active */
+.custom-menu ion-item:hover {
+  --background: rgba(120, 40, 160, 0.2);
+  transform: translateX(5px);
+  --color: #ffffff;
+}
+
+.custom-menu ion-item:active {
+  --background: rgba(140, 60, 200, 0.4);
+}
+
+/* ✨ Animación de entrada del menú */
+.custom-menu {
+  animation: fadeInMenu 0.5s ease forwards;
+}
+
+@keyframes fadeInMenu {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

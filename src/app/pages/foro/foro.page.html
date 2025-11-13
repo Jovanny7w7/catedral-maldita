@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- Usa tu header personalizado -->
+    <app-header [title]="'Foro'"></app-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding fondo-foro">
+
+  <!-- 📝 Nueva publicación -->
+  <ion-card class="nuevo-post">
+    <ion-card-header>
+      <ion-card-title>Nueva Publicación</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-input
+        placeholder="Título de tu publicación"
+        fill="outline"
+        [(ngModel)]="nuevoTitulo"
+        class="input-foro">
+      </ion-input>
+
+      <ion-textarea
+        placeholder="Comparte tus pensamientos..."
+        fill="outline"
+        [(ngModel)]="nuevoContenido"
+        class="textarea-foro">
+      </ion-textarea>
+
+      <ion-button expand="block" color="primary" (click)="publicar()" class="btn-publicar">
+        <ion-icon slot="start" name="send-outline"></ion-icon>
+        Publicar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- 📜 Lista de publicaciones -->
+  <ion-list *ngIf="publicaciones.length > 0; else sinPublicaciones">
+    <ion-card *ngFor="let pub of publicaciones" class="post-card">
+      <ion-card-header>
+        <ion-card-title>{{ pub.titulo }}</ion-card-title>
+        <ion-card-subtitle>
+          {{ pub.fecha_creacion?.toDate ? (pub.fecha_creacion.toDate() | date:'short') : (pub.fecha_creacion | date:'short') }}
+        </ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p class="contenido-post">{{ pub.contenido }}</p>
+
+        <div class="reacciones">
+          <ion-chip color="medium" outline="true">
+            <ion-icon name="heart-outline"></ion-icon>
+            <ion-label>{{ pub.reacciones?.love || 0 }}</ion-label>
+          </ion-chip>
+
+          <ion-chip color="medium" outline="true">
+            <ion-icon name="thumbs-up-outline"></ion-icon>
+            <ion-label>{{ pub.reacciones?.like || 0 }}</ion-label>
+          </ion-chip>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ng-template #sinPublicaciones>
+    <div class="sin-posts">
+      <ion-icon name="chatbubbles-outline" size="large"></ion-icon>
+      <p>No hay publicaciones aún. ¡Sé el primero en escribir algo!</p>
+    </div>
+  </ng-template>
+
+</ion-content>

@@ -1,0 +1,72 @@
+:host {
+  --background: #0e0e10;
+  color: #fff;
+}
+
+/* Contenedor general */
+.noticias-page {
+  background-color: #0e0e10;
+  color: #fff;
+  min-height: 100vh;
+
+  .noticias-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+  }
+}
+
+/* Tarjeta de noticia */
+::ng-deep ion-card.noticia-card {
+  background: #18181b;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  }
+}
+
+/* Imagen */
+.noticia-imagen {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Título */
+::ng-deep ion-card-title {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 0.5rem;
+}
+
+/* Contenido */
+.noticia-contenido {
+  color: #bbb;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+}
+
+/* Fecha */
+.noticia-fecha {
+  display: block;
+  text-align: right;
+  color: #777;
+  font-size: 0.8rem;
+}
+
+/* Estilo del header condensado */
+::ng-deep ion-header[collapse="condense"] ion-title {
+  color: #a985ff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}

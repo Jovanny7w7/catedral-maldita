@@ -1,0 +1,119 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="main-header">
+    <!-- Botón del menú -->
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" class="ion-app-color"></ion-menu-button>
+    </ion-buttons>
+
+    <!-- Logo + título -->
+    <div class="header-center">
+      <img src="assets/img/logo.png" alt="Logo Catedral" class="game-logo" />
+      <ion-title class="game-title">La Catedral Maldita</ion-title>
+    </div>
+
+    <!-- Icono de usuario -->
+    <ion-buttons slot="end">
+      <ion-button fill="clear" color="light">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="inicio-page ion-padding">
+
+  <!-- PORTADA HERO -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <img src="../../../assets/img/fondo2.png" alt="Portada Catedral" class="hero-bg" />
+
+    <div class="hero-content">
+      <h1>La Maldición de la Catedral</h1>
+      <p>Sumérgete en una historia donde el tiempo se rompe, la fe se retuerce y la oscuridad despierta.</p>
+      <ion-button class="btn-jugar" expand="block" size="large">
+        <ion-icon name="play-circle-outline" slot="start"></ion-icon>
+        Explorar el Juego
+      </ion-button>
+    </div>
+  </section>
+
+  <!-- HISTORIA -->
+  <section class="historia-section">
+    <h2>Una Maldición a Través del Tiempo</h2>
+    <p>
+      Ambientado en <strong>Morelia, Michoacán</strong>, este videojuego te lleva entre dos mundos:
+      el Morelia colonial y el antiguo <strong>Guayangareo purépecha</strong>. 
+      Vive una aventura donde las decisiones cambian el destino de la historia.
+    </p>
+  </section>
+
+  <!-- CARACTERÍSTICAS -->
+  <section class="features-section">
+    <ion-card class="feature-card">
+      <ion-icon name="flame-outline"></ion-icon>
+      <h3>Acción y Supervivencia</h3>
+      <p>Enfrenta desafíos oscuros y enemigos ancestrales en entornos llenos de tensión.</p>
+    </ion-card>
+
+    <ion-card class="feature-card">
+      <ion-icon name="earth-outline"></ion-icon>
+      <h3>Exploración Cultural</h3>
+      <p>Sumérgete en los mitos y tradiciones purépechas, reconstruidos con fidelidad histórica.</p>
+    </ion-card>
+
+    <ion-card class="feature-card">
+      <ion-icon name="git-branch-outline"></ion-icon>
+      <h3>Decisiones y Destino</h3>
+      <p>Cada elección altera la línea temporal. ¿Romperás la maldición o la perpetuarás?</p>
+    </ion-card>
+  </section>
+
+  <!-- TARJETAS PRINCIPALES -->
+  <div class="inicio-container">
+    <ion-card class="inicio-card">
+      <img src="https://i5.walmartimages.com/asr/ae891fdf-9484-4037-a404-733957af25ca.92264b38f5dffe552bb89194d3e0c207.jpeg" alt="Catedral de Morelia" class="inicio-imagen" />
+      <ion-card-content>
+        <ion-card-title>La Maldición de la Catedral</ion-card-title>
+        <p class="inicio-contenido">
+          En la ciudad de <strong>Morelia, Michoacán</strong>, un joven es atraído por un cántico dentro de la Catedral.
+          Al descubrir un altar oculto, recibe una <strong>maldición ancestral</strong> que lo transporta al pasado,
+          donde deberá sobrevivir, explorar aldeas purépechas y enfrentarse a los <strong>Chichimecas oscuros</strong>.
+        </p>
+        <span class="inicio-fecha">Inspirado en leyendas purépechas • Siglo XVII</span>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="inicio-grid">
+      <ion-card class="inicio-card">
+        <img src="https://i.pinimg.com/736x/e2/36/b1/e236b11d911b2d1a980eabe5b83220c7.jpg" alt="Aldea purépecha" class="inicio-imagen" />
+        <ion-card-content>
+          <ion-card-title>Mundos Ancestrales</ion-card-title>
+          <p class="inicio-contenido">
+            Explora aldeas purépechas llenas de secretos, mitos y espíritus que aún custodian el equilibrio del tiempo.
+          </p>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="inicio-card">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.P_HgDHuci336W7ihVEw_jAHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Guerreros oscuros" class="inicio-imagen" />
+        <ion-card-content>
+          <ion-card-title>Los Chichimecas Oscuros</ion-card-title>
+          <p class="inicio-contenido">
+            Enfrenta a las fuerzas oscuras que amenazan con romper la frontera entre el pasado y el presente.
+          </p>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="inicio-card">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.Nw-m7Y4HRJXGXMF2yjD7hwHaEJ?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Altar secreto" class="inicio-imagen" />
+        <ion-card-content>
+          <ion-card-title>El Altar Prohibido</ion-card-title>
+          <p class="inicio-contenido">
+            Descubre el altar oculto en la Catedral y el poder ancestral que encierra una maldición imposible de romper.
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+</ion-content>

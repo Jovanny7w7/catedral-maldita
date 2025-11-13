@@ -1,0 +1,73 @@
+ion-content {
+  --background: #0b0b0b;
+  color: #ddd;
+  font-family: 'Poppins', sans-serif;
+  padding: 12px;
+}
+
+ion-list {
+  margin-top: 6px;
+}
+
+.requisito-card {
+  --background: #111;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: 1px solid rgba(120, 90, 160, 0.08); // apenas visible
+  padding: 12px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.requisito-card:hover {
+  background: #141414;
+  transform: translateY(-1px);
+}
+
+.titulo {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #d7d5e0; // gris casi blanco con un toque lavanda
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.detalles p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px 0;
+  font-size: 0.88rem;
+  color: #bdbdbd;
+}
+
+.descripcion {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  color: #a9a4b5;
+}
+
+ion-icon {
+  width: 15px;
+  height: 15px;
+  color: #88819e; // gris con un leve tono violeta
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.requisito-card:hover ion-icon {
+  opacity: 0.8;
+}
+
+ion-item {
+  --min-height: 0;
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  --background: transparent;
+}

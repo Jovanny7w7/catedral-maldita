@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <app-header [title]="'Requisitos'"></app-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Requisitos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list *ngIf="requisitos.length > 0; else sinDatos">
+<ion-item *ngFor="let r of requisitos" class="requisito-card">
+  <ion-label>
+    <h2 class="titulo">
+      <ion-icon src="assets/icons/game.svg" class="icono"></ion-icon>
+      {{ r.version }} - {{ r.clasificacion }}
+    </h2>
+
+    <div class="detalles">
+      <p><ion-icon src="assets/icons/cpu.svg"></ion-icon> <strong>CPU:</strong> {{ r.cpu }}</p>
+      <p><ion-icon src="assets/icons/ram.svg"></ion-icon> <strong>RAM:</strong> {{ r.ram }}</p>
+      <p><ion-icon src="assets/icons/storage.svg"></ion-icon> <strong>Almacenamiento:</strong> {{ r.almacenamiento_libre }}</p>
+      <p><ion-icon src="assets/icons/size.svg"></ion-icon> <strong>Tamaño:</strong> {{ r.tamano }}</p>
+      <p><ion-icon src="assets/icons/language.svg"></ion-icon> <strong>Idioma:</strong> {{ r.idiomas }}</p>
+      <p><ion-icon src="assets/icons/windows.svg"></ion-icon> <strong>Windows:</strong> {{ r.requiere_windows }}</p>
+      <p><ion-icon src="assets/icons/price.svg"></ion-icon> <strong>Precio:</strong> ${{ r.precio }}</p>
+    </div>
+
+    <div class="descripcion">
+      <ion-icon src="assets/icons/info.svg"></ion-icon>
+      <span>{{ r.descripcion }}</span>
+    </div>
+  </ion-label>
+</ion-item>
+
+  </ion-list>
+
+  <ng-template #sinDatos>
+    <ion-item>
+      <ion-label>No se encontraron requisitos.</ion-label>
+    </ion-item>
+  </ng-template>
+</ion-content>

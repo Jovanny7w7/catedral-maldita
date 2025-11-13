@@ -1,3 +1,25 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <!-- Menú lateral -->
+  <ion-menu side="start" menuId="first" contentId="main" class="custom-menu">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menú Principal</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        
+        <ion-item routerLink="/noticias" routerDirection="root">Noticias</ion-item>
+        <ion-item routerLink="/galeria" routerDirection="root">Galería</ion-item>
+        <ion-item routerLink="/foro" routerDirection="root">Foro</ion-item>
+        <ion-item routerLink="/requisitos" routerDirection="root">Requisitos</ion-item>
+        <ion-item routerLink="/notificaciones" routerDirection="root">Notificaciones</ion-item>
+        <ion-item routerLink="/contacto" routerDirection="root">Contacto</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- Contenido principal -->
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

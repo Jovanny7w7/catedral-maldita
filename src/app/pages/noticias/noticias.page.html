@@ -1,0 +1,37 @@
+<!-- Header reutilizable -->
+<app-header [title]="'Noticias'" [history]="['Inicio', 'Noticias']"></app-header>
+
+<ion-content [fullscreen]="true" class="noticias-page">
+
+  <!-- Título grande -->
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Noticias</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Lista de noticias -->
+  <div class="noticias-container ion-padding">
+    <ion-card *ngFor="let noticia of noticias" class="noticia-card">
+      <!-- Imagen -->
+      <img
+        *ngIf="noticia.imagen"
+        [src]="noticia.imagen"
+        alt="Imagen de {{ noticia.titulo }}"
+        class="noticia-imagen"
+      />
+
+      <!-- Contenido -->
+      <ion-card-header>
+        <ion-card-title>{{ noticia.titulo }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p class="noticia-contenido">{{ noticia.contenido }}</p>
+        <small class="noticia-fecha">
+          🗓 {{ noticia.fecha_publicacion.toDate() | date: 'medium' }}
+        </small>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

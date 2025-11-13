@@ -1,0 +1,21 @@
+ion-item {
+  --background: #1c1b29;
+  --color: #fff;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+ion-label h2 {
+  font-weight: bold;
+  color: #bb86fc; // tono morado sutil
+}
+
+ion-label p {
+  font-size: 14px;
+  color: #ddd;
+}
+
+ion-label small {
+  color: #999;
+}

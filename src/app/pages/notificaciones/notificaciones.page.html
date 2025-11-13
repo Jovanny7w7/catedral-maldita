@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <app-header [title]="'Notificaciones'"></app-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="notificaciones-content">
+  <ion-list *ngIf="notificaciones$ | async as notificaciones; else cargando">
+    <ion-item *ngFor="let n of notificaciones">
+      <ion-label>
+        <h2>{{ n.titulo }}</h2>
+        <p>{{ n.mensaje }}</p>
+        <small>{{ n.fecha }}</small>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #cargando>
+    <ion-text color="medium">
+      <p style="text-align: center; margin-top: 40px;">Cargando notificaciones...</p>
+    </ion-text>
+  </ng-template>
+</ion-content>
