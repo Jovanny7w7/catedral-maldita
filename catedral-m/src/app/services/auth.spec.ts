@@ -1,16 +1,41 @@
 import { TestBed } from '@angular/core/testing';
+import { AuthService } from './auth';
+import { Auth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
-import { Auth } from './auth';
-
-describe('Auth', () => {
-  let service: Auth;
+describe('AuthService', () => {
+  let service: AuthService;
+  let authMock: Partial<Auth>;
+  let routerMock: Partial<Router>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(Auth);
+    // Creamos un mock mínimo de AuthService
+    authMock = {
+      signOut: () => Promise.resolve()
+    } as any;
+
+    // Mock del router
+    routerMock = {
+      navigate: jasmine.createSpy('navigate')
+    };
+
+    TestBed.configureTestingModule({
+      providers: [
+        AuthService,
+        { provide: Auth, useValue: authMock },
+        { provide: Router, useValue: routerMock }
+      ]
+    });
+
+    service = TestBed.inject(AuthService);
   });
 
-  it('should be created', () => {
+  it('El servicio debe crearse correctamente', () => {
     expect(service).toBeTruthy();
+  });
+
+  it('logout debe cerrar sesión y redirigir al login', async () => {
+    await service.logout();
+    expect(routerMock.navigate).toHaveBeenCalledWith(['/login']);
   });
 });

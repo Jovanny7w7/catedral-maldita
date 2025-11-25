@@ -69,3 +69,5 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 }
+
+export { Auth } from '@angular/fire/auth';

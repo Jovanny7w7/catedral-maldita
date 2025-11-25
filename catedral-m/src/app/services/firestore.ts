@@ -93,3 +93,5 @@ export class servicesFirestore {
     return collectionData(q, { idField: 'id' }) as Observable<Notificaciones[]>;
   }
 }
+
+export { Firestore };
